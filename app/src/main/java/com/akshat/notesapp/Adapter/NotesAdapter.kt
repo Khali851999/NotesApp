@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.akshat.notesapp.R
 import com.akshat.notesapp.dao.Note
 
-class NotesAdapter(val context: Context, val notesList: ArrayList<Note>): RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter(val context: Context): RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
     private var allNotesList = ArrayList<Note>()
 
@@ -34,7 +35,15 @@ class NotesAdapter(val context: Context, val notesList: ArrayList<Note>): Recycl
         holder.textView.text = note.text
         holder.deleteButton.setOnClickListener {
             allNotesList.remove(allNotesList[position])
+            notifyDataSetChanged()
+            Toast.makeText(context, "Deleted successfully!!!", Toast.LENGTH_SHORT).show()
         }
+
+    }
+
+    fun updateList(newList: ArrayList<Note>){
+        allNotesList.clear()
+        allNotesList.addAll(newList)
         notifyDataSetChanged()
     }
 }

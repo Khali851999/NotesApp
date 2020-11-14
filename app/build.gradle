@@ -1,8 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+//    id 'kotlin-kapt'
 }
-apply plugin: 'kotlin-kapt'
+//apply plugi
 
 android {
     compileSdkVersion 30
@@ -34,6 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+//    kapt { generateStubs = true }
 }
 
 dependencies {
@@ -45,7 +47,7 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+//    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
     // Lifecycle components
