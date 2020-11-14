@@ -41,7 +41,7 @@ class NotesAdapter(val context: Context): RecyclerView.Adapter<NotesAdapter.Note
 
     }
 
-    fun updateList(newList: ArrayList<Note>){
+    fun updateList(newList: List<Note>){
         allNotesList.clear()
         allNotesList.addAll(newList)
         notifyDataSetChanged()

@@ -6,7 +6,7 @@ import com.akshat.notesapp.data.dao.NotesDao
 
 class NotesRepository(private val notesDao: NotesDao){
 
-    val allNotes: LiveData<ArrayList<Note>> = notesDao.getAllItems()
+    val allNotes: LiveData<List<Note>> = notesDao.getAllItems()
 
     suspend fun insert(note: Note){
         notesDao.insert(note)
