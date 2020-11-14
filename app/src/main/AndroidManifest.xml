@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NotesApp">
-        <activity android:name="com.akshat.notesapp.MainActivity">
+        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".repository.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
