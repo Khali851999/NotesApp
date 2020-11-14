@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.akshat.notesapp.Adapter.NotesAdapter
+import com.akshat.notesapp.ui.Adapter.NotesAdapter
 import com.akshat.notesapp.R
 import com.akshat.notesapp.ViewModel.NotesViewModel
 import com.akshat.notesapp.data.dao.Note

@@ -1,4 +1,4 @@
-package com.akshat.notesapp.repository
+package com.akshat.notesapp.data.repository
 
 import androidx.lifecycle.LiveData
 import com.akshat.notesapp.data.dao.Note
