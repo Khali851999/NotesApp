@@ -16,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var viewModel: NotesViewModel
+    private lateinit var viewModel: NotesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +34,13 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         ).get(NotesViewModel::class.java)
 
+//        viewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+
         viewModel.allNotes.observe(this, Observer {
-            if (it != null){
+
                 adapter.updateList(it)
                 adapter.notifyDataSetChanged()
-            }
+
         })
 
         floatingActionButton.setOnClickListener {

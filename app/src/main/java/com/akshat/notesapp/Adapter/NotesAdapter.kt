@@ -33,11 +33,11 @@ class NotesAdapter(val context: Context): RecyclerView.Adapter<NotesAdapter.Note
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         val note = allNotesList[position]
         holder.textView.text = note.text
-        holder.deleteButton.setOnClickListener {
-            allNotesList.remove(allNotesList[position])
-            notifyDataSetChanged()
-            Toast.makeText(context, "Deleted successfully!!!", Toast.LENGTH_SHORT).show()
-        }
+//        holder.deleteButton.setOnClickListener {
+//            allNotesList.remove(allNotesList[position])
+//            notifyDataSetChanged()
+//            Toast.makeText(context, "Deleted successfully!!!", Toast.LENGTH_SHORT).show()
+//        }
 
     }
 

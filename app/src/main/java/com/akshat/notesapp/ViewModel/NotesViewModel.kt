@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.akshat.notesapp.data.dao.Note
+import com.akshat.notesapp.data.dao.NotesDao
 import com.akshat.notesapp.data.db.NotesDB
 import com.akshat.notesapp.repository.NotesRepository
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,7 @@ class NotesViewModel(application: Application): AndroidViewModel(application) {
     private val notesRepository: NotesRepository
 
     init {
-        val dao = NotesDB.getDatabase(application).notesDao()
+        val dao: NotesDao = NotesDB.getDatabase(application).notesDao()
         notesRepository = NotesRepository(dao)
         allNotes = notesRepository.allNotes
     }
