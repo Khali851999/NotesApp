@@ -13,6 +13,7 @@ import com.akshat.notesapp.R
 import com.akshat.notesapp.ViewModel.NotesViewModel
 import com.akshat.notesapp.data.dao.Note
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.recyclerview_item.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,14 +28,15 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = NotesAdapter(this)
-        recyclerView.adapter = adapter
+
 
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         ).get(NotesViewModel::class.java)
 
+        val adapter = NotesAdapter(this, viewModel)
+        recyclerView.adapter = adapter
 //        viewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
         viewModel.allNotes.observe(this, Observer {
@@ -48,7 +50,8 @@ class MainActivity : AppCompatActivity() {
             val text: String = editText.text.toString()
             if (text.isNotEmpty()) {
                 viewModel.insertNote(Note(text))
-                Toast.makeText(this, "Note inserted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "${text} inserted", Toast.LENGTH_SHORT).show()
+                editText.text = null
             } else {
                 editText.setError("Cannot be empty!!!")
             }

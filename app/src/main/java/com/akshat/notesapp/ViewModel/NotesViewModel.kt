@@ -22,9 +22,9 @@ class NotesViewModel(application: Application): AndroidViewModel(application) {
         allNotes = notesRepository.allNotes
     }
 
-//    fun deleteNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
-//        notesRepository.delete(note)
-//    }
+    fun deleteNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
+        notesRepository.delete(note)
+    }
 
     fun insertNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
         notesRepository.insert(note)
