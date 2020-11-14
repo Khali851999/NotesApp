@@ -2,19 +2,16 @@ package com.akshat.notesapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.akshat.notesapp.Adapter.NotesAdapter
 import com.akshat.notesapp.R
 import com.akshat.notesapp.ViewModel.NotesViewModel
-import com.akshat.notesapp.dao.Note
+import com.akshat.notesapp.data.dao.Note
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -38,8 +35,10 @@ class MainActivity : AppCompatActivity() {
         ).get(NotesViewModel::class.java)
 
         viewModel.allNotes.observe(this, Observer {
-            if (it != null)
+            if (it != null){
                 adapter.updateList(it)
+                adapter.notifyDataSetChanged()
+            }
         })
 
         floatingActionButton.setOnClickListener {

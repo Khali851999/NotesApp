@@ -1,8 +1,8 @@
 package com.akshat.notesapp.repository
 
 import androidx.lifecycle.LiveData
-import com.akshat.notesapp.dao.Note
-import com.akshat.notesapp.dao.NotesDao
+import com.akshat.notesapp.data.dao.Note
+import com.akshat.notesapp.data.dao.NotesDao
 
 class NotesRepository(private val notesDao: NotesDao){
 

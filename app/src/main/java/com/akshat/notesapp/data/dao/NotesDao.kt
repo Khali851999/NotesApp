@@ -1,4 +1,4 @@
-package com.akshat.notesapp.dao
+package com.akshat.notesapp.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

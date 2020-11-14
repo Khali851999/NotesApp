@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.akshat.notesapp.R
-import com.akshat.notesapp.dao.Note
+import com.akshat.notesapp.data.dao.Note
 
 class NotesAdapter(val context: Context): RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
@@ -22,7 +22,7 @@ class NotesAdapter(val context: Context): RecyclerView.Adapter<NotesAdapter.Note
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
 
-        val noteView = LayoutInflater.from(context).inflate(R.layout.recyclerview_item, parent, false)
+        val noteView = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_item, parent, false)
         return  NotesViewHolder(noteView)
     }
 

@@ -1,11 +1,11 @@
-package com.akshat.notesapp.db
+package com.akshat.notesapp.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.akshat.notesapp.dao.Note
-import com.akshat.notesapp.dao.NotesDao
+import com.akshat.notesapp.data.dao.Note
+import com.akshat.notesapp.data.dao.NotesDao
 
 @Database(entities = [Note::class], version = 1)
 abstract class NotesDB: RoomDatabase() {

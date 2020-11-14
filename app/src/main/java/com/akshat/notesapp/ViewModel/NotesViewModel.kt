@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.akshat.notesapp.dao.Note
-import com.akshat.notesapp.db.NotesDB
+import com.akshat.notesapp.data.dao.Note
+import com.akshat.notesapp.data.db.NotesDB
 import com.akshat.notesapp.repository.NotesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
